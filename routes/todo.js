@@ -1,13 +1,13 @@
 import { Router } from 'express'
 import restrict from '../helpers/restrict.js'
-import {getAllTodos, createTodo} from "../controllers/todos.js"
+import {getAllTodos, createTodo, getTodo} from "../controllers/todos.js"
 
 const router = Router()
 
 // get all todos
 router.get('/todos', getAllTodos)
 // get id todo
-// router.get('/todos/:id', getTodo)
+router.get('/todos/:id', getTodo)
 // // post createTodo
 router.post('/todos', restrict, createTodo)
 // // put updateTodo
