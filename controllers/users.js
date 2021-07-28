@@ -14,7 +14,7 @@ export const signUp = async (req, res) => {
   try {
     // res.send(req.body)
     const { username, email, password } = req.body
-    const password_digest = await bcrypt.hash(password, SALT_ROUNDS)
+    const password_digest = await bcrypt.hash(password, parseInt(SALT_ROUNDS))
 
     const user = new User({
       email,
