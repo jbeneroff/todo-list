@@ -11,7 +11,7 @@ export default function Home() {
       setTodos(data)
     }
     fetchTodos()
-  })
+  }, [])
 
   return (
     <Layout>
