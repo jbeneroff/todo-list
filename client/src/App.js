@@ -1,12 +1,21 @@
 import './App.css';
 import { Route } from "react-router-dom"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Home from './views/Home/Home'
 import SignUp from './views/SignUp/SignUp'
 import SignIn from './views/SignIn/SignIn'
+import { verify } from './services/users'
 
 function App() {
   const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const verifyUser = async () => {
+      setUser(await verify())
+    }
+    verifyUser()
+  }, [])
+
   return (
     <div className="App">
       {/* route all todos */}

@@ -22,3 +22,13 @@ export const signIn = async (credentials) => {
     throw e
   }
 }
+
+export const verify = async () => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    const res = await api.get('/verify')
+    return res.data
+  } else {
+    return false
+  }
+}
