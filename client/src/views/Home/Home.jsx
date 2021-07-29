@@ -15,8 +15,8 @@ export default function Home(props) {
 
   return (
     <Layout user={props.user} setUser={props.setUser}>
-      {todos.map((todo) => {
-        return <div>{todo.name}</div>
+      {todos.map((todo, key) => {
+        return <div key={todo._id}>{todo.name}</div>
       })}
     </Layout>
   )
