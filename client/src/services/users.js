@@ -32,3 +32,12 @@ export const verify = async () => {
     return false
   }
 }
+
+export const signOut = () => {
+  try {
+    localStorage.removeItem("token")
+    return true
+  } catch (e) {
+    throw e
+  }
+}
