@@ -5,7 +5,7 @@ import {getAllTodos, createTodo, getTodo} from "../controllers/todos.js"
 const router = Router()
 
 // get all todos
-router.get('/todos', getAllTodos)
+router.get('/todos', restrict, getAllTodos)
 // get id todo
 router.get('/todos/:id', getTodo)
 // // post createTodo
